@@ -28,15 +28,29 @@ export default function Singup() {
   }
     
   return (
-    <div>
-      <form className='flex flex-col mt-10 w-60' onSubmit={handleSubmit}>
-        <input onChange={(e)=>{
-          setId(e.target.value)
-        }} type="text" placeholder="아이디" />
-        <input onChange={(e)=>{
-          setPassword(e.target.value)
-        }} type="password" placeholder="비밀번호" />
-        <button type="submit">회원가입</button>
+    <div className="flex justify-center items-center h-screen bg-blue-100">
+      <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-md mx-auto w-full" onSubmit={handleSubmit}>
+        <div className="mb-6">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+            아이디
+          </label>
+          <input onChange={(e)=>{
+            setId(e.target.value)}}
+            type="text" placeholder="아이디"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+        </div>
+        <div className="mb-6">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+              비밀번호
+          </label>
+          <input onChange={(e)=>{
+            setPassword(e.target.value)}}
+            type="password" placeholder="비밀번호"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+        </div>
+        <div className="flex items-center justify-center">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">회원가입</button>
+        </div>
       </form>
     </div>
   )
