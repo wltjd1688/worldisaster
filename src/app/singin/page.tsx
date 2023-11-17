@@ -4,7 +4,7 @@ import axios from 'axios';
 
 async function login(id:string, password:string) {
   try{
-    const response = await axios.post('https://worldisaster.com/auth/signin',{
+    const response = await axios.post('https://worldisaster.com/auth/signin/google',{
     body:{"username":id,"password":password}
   });
     console.log('로그인 성공',response);
@@ -23,7 +23,7 @@ export default function SingIn() {
     
   return (
     <>
-      <form className='flex flex-col mt-10 w-60'  onSubmit={handlueSubmit}>
+      <form className='flex flex-col mt-10 w-60' onSubmit={handlueSubmit}>
         <input onChange={(e)=>{
           setId(e.target.value)
         }} type="text" placeholder="아이디" />

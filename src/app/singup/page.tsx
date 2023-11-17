@@ -22,14 +22,14 @@ async function singup(id:string, password:string) {
 export default function Singup() {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
-  const handlueSubmit = async(event: React.FormEvent)=>{
+  const handleSubmit = async(event: React.FormEvent)=>{
     event.preventDefault();
     await singup(id, password);
   }
     
   return (
     <div>
-      <form className='flex flex-col mt-10 w-60' onSubmit={handlueSubmit}>
+      <form className='flex flex-col mt-10 w-60' onSubmit={handleSubmit}>
         <input onChange={(e)=>{
           setId(e.target.value)
         }} type="text" placeholder="아이디" />

@@ -211,7 +211,7 @@ const Cloud = () => {
   )};
 
 export const EarthCanvas = () => {
-  const [reasetCamera, setResetCamera] = useState(false);
+  const [resetCamera, setResetCamera] = useState(false);
 
   return (
     <>
@@ -221,6 +221,8 @@ export const EarthCanvas = () => {
           enablePan={false}
           minPolarAngle={0.5}
           maxPolarAngle={2}
+          minDistance={2.7}
+          maxDistance={5}
         />
         <Light />
         <Stars 
