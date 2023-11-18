@@ -29,7 +29,7 @@ export const Navbar = () => {
             </>
             ):(
             <>
-            <span className='text-xl'><Link href='/singin'>로그인</Link></span>
+            <span className='text-xl'><Link href='https://worldisaster.com/auth/google'>로그인</Link></span>
             <span className='text-xl'><Link href='/singup'>회원가입</Link></span>
             </>)
           }
