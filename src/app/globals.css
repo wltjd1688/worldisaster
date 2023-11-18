@@ -52,3 +52,11 @@ nav.with-shadow {
   cursor: pointer;
   opacity: 80%;
 }
+
+.topbar {
+  @apply fixed top-0 z-30 flex w-full items-center justify-between bg-dark-2 bg-opacity-70 px-6 py-3;
+}
+
+.btn {
+  @apply rounded-3xl bg-primary-500 px-8 py-2 !text-small-regular text-light-1 max-xs:w-full !important;
+}
