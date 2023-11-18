@@ -24,7 +24,7 @@ export default function Home() {
   }, []);
 
   const imageStyle = {
-    position: 'absolute',
+    position: 'absolute' as const,
     top: 0,
     left: 0,
     width: '100%',
