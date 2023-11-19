@@ -17,7 +17,6 @@ export const Navbar = () => {
           <div className='flex items-center gap-3'>
             <div className='text-xl'><Link href='/archive'>아카이브</Link></div>
             <div className='text-xl'><Link href='/live'>실시간</Link></div>
-            <div className='text-xl'><Link href='/share'>공유</Link></div>
           </div>
         </div>
         <div className='flex items-center gap-3'>
