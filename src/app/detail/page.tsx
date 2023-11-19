@@ -77,7 +77,6 @@ export default function Detail() {
             <section className='main-container'>
               <div className='w-full max-w-4xl'>상세페이지입니다.</div>
             </section>
-            {/* @ts-ignore */}
             <RightSidebar />
           </main>
     </>
