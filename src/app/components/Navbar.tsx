@@ -9,8 +9,6 @@ import Cookies from 'js-cookie';
 
 export const Navbar = () => {
 
-  const isLogin: boolean = false;
-
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
