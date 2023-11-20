@@ -6,6 +6,24 @@
 - 멤버 <br>
 김호집(팀장/백엔드), 김기영(백엔드), 이유정(백엔드), 김지성(프론트엔드), 김초원(프론트엔드)
 
+- 발표자료 <br>
+[💻 worldisaster.vercel.app
+](worldisaster.vercel.app
+)
+<br>
+[💭 PPT](https://www.canva.com/design/DAF0tEKl5s4/5FW-fzD3tG_Qkv4foBb7WQ/view?utm_content=DAF0tEKl5s4&utm_campaign=designshare&utm_medium=link&utm_source=editor)
+
+<br>
+
+- 우리는 어떤 문제를 해결하고자 했는가? <br>
+
+
+- 우리 서비스는 특별히 어떤 기능이 있는가?<br>
+
+- 시연/데모 <br>
+
+- 아키텍쳐 선정 이유 <br>
+
 <br>
 
 ## 🌌 메인페이지
