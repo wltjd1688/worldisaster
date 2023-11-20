@@ -1,10 +1,25 @@
+"use client"
+
 import '../globals.css'
 import Link from 'next/link';
 import Image from 'next/image';
+import React, { useState, useEffect } from 'react';
+import Cookies from 'js-cookie';
+
 
 export const Navbar = () => {
 
-  const isLogin:boolean = false;
+  const isLogin: boolean = false;
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = Cookies.get('access-token');
+
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   return (
     <>
@@ -17,21 +32,21 @@ export const Navbar = () => {
           <div className='flex items-center gap-3'>
             <div className='text-xl'><Link href='/archive'>아카이브</Link></div>
             <div className='text-xl'><Link href='/live'>실시간</Link></div>
+            <div className='text-xl'>언어</div>
           </div>
         </div>
+
         <div className='flex items-center gap-3'>
-          <div className='text-xl'>언어</div>
-          { isLogin ? 
-            (<>
-              <image className='rounded-full w-[36px] h-[36px] overflow-hidden' href="https://via.placeholder.com/36x36" />
-              <span className='text-xl'><Link href="/mypage">내 계정</Link></span>
-            </>
-            ):(
+          {isLoggedIn ? (
             <>
-            <span className='text-xl'><Link href='https://worldisaster.com/auth/google'>로그인</Link></span>
-            <span className='text-xl'><Link href='/singup'>회원가입</Link></span>
-            </>)
-          }
+              <span className='text-xl'><Link href="/mypage">내 계정</Link></span>
+              <span className='text-xl'><a href='https://worldisaster.com/api/auth/logout'>로그아웃</a></span>
+            </>
+          ) : (
+            <>
+              <span className='text-xl'><a href='https://worldisaster.com/api/auth/google'>로그인</a></span>
+            </>
+          )}
         </div>
       </nav>
     </>
