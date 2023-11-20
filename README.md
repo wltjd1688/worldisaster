@@ -7,11 +7,10 @@
 김호집(팀장/백엔드), 김기영(백엔드), 이유정(백엔드), 김지성(프론트엔드), 김초원(프론트엔드)
 
 - 발표자료 <br>
-[💻 worldisaster.vercel.app
+  - [💻 worldisaster.vercel.app
 ](worldisaster.vercel.app
 )
-<br>
-[💭 PPT](https://www.canva.com/design/DAF0tEKl5s4/5FW-fzD3tG_Qkv4foBb7WQ/view?utm_content=DAF0tEKl5s4&utm_campaign=designshare&utm_medium=link&utm_source=editor)
+  - [💭 PPT](https://www.canva.com/design/DAF0tEKl5s4/5FW-fzD3tG_Qkv4foBb7WQ/view?utm_content=DAF0tEKl5s4&utm_campaign=designshare&utm_medium=link&utm_source=editor)
 
 <br>
 
