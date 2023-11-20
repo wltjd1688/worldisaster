@@ -8,8 +8,7 @@
 
 - 발표자료 <br>
   - [💻 worldisaster.vercel.app
-](worldisaster.vercel.app
-)
+](https://worldisaster.vercel.app/)
   - [💭 PPT](https://www.canva.com/design/DAF0tEKl5s4/5FW-fzD3tG_Qkv4foBb7WQ/view?utm_content=DAF0tEKl5s4&utm_campaign=designshare&utm_medium=link&utm_source=editor)
 
 <br>
