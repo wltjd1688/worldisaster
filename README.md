@@ -13,7 +13,7 @@
 ![메인페이지](./public/메인페이지.png)
 
 ### 1 아카이브
-three.js로 구현된 지구 위에 API(reliefWeb,factbook)로 제공된 약 3500여 개의 재난 정보를 국가 별로 확인할 수 있도록 클릭 이벤트 제공
+three.js로 구현된 지구 위에 API(reliefWeb,factbook,NewYorkTimes Archive API)로 제공된 약 3500여 개의 재난 정보를 국가 별로 확인할 수 있도록 클릭 이벤트 제공
 <br>
 
 -> 국가 클릭 시 상세 페이지로 이동
@@ -21,7 +21,7 @@ three.js로 구현된 지구 위에 API(reliefWeb,factbook)로 제공된 약 350
 ![아카이브](./public/아카이브.png)
 
 ### 2 실시간
-three.js로 구현된 지구 위에 API(NewYorkTimes Archive API)로 제공된 약 10-20여 개의 아직 끝나지 않은 재난 정보를 확인할 수 있도록 클릭 이벤트 제공
+three.js로 구현된 지구 위에 API(Bing?미정)로 제공된 약 10-20여 개의 아직 끝나지 않은 재난 정보를 확인할 수 있도록 클릭 이벤트 제공
 <br>
 
 -> 국가 위에 생성 된 핀 클릭 시 상세페이지로 이동
