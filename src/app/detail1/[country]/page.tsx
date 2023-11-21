@@ -4,15 +4,15 @@ import LeftSidebar from "../../components/LeftSidebar"
 import { usePathname } from "next/navigation";
 import path from "path";
 
-export function Nation() {
+export async function Nation() {
   const [country, setCountry] = useState([]);
   const pathname = usePathname();
   const pathSegments = pathname.split("/");
-  // console.log(pathSegments[2]);
+  console.log(pathSegments[2]);
 
-  // useEffect(() => {
-  //   getCountury();
-  // }, [])
+  useEffect(() => {
+    getCountury();
+  }, [])
 
   const getCountury = async () => {
     try {
