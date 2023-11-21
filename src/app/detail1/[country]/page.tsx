@@ -1,29 +1,27 @@
-"use client";
-import { useEffect, useState } from "react"
-import LeftSidebar from "../../components/LeftSidebar"
+"use client"
+import { useEffect, useState } from "react";
+import LeftSidebar from "../../components/LeftSidebar";
 import { usePathname } from "next/navigation";
-import path from "path";
 
-export async function Nation() {
+const Nation = () => {
   const [country, setCountry] = useState([]);
   const pathname = usePathname();
   const pathSegments = pathname.split("/");
-  console.log(pathSegments[2]);
-
+  
   useEffect(() => {
-    getCountury();
-  }, [])
+    const getCountury = async () => {
+      try {
+        const res = await fetch(`https://worldisaster.com/api/country/${pathSegments[2]}`);
+        const data = await res.json();
+        setCountry(data);
+        console.log("국가 데이터 가져오기 성공");
+      } catch(error) {
+        console.log("국가 데이터 가져오기 실패", error);
+      }
+    };
 
-  const getCountury = async () => {
-    try {
-      const res = await fetch(`https://worldisaster.com/api/country/${pathSegments[2]}`);
-      const data = await res.json();
-      console.log("국가 데이터 가져오기 성공");
-      setCountry(data);
-    } catch(error) {
-      console.log("국가 데이터 가져오기 실패",error);
-    }
-  }
+    getCountury();
+  }, [pathSegments]); // 의존성 배열에 pathSegments[2]를 추가
 
   return (
     <>
@@ -34,7 +32,7 @@ export async function Nation() {
         </section>
       </main>
     </>
-  )
-}
+  );
+};
 
 export default Nation;
