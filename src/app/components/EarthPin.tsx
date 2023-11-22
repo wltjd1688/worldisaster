@@ -120,21 +120,19 @@ export const EarthCanvas = () => {
     const curPath = currentPath.split('/')[1];
     async function getDisaster() {
       try {
-        const response = await axios.get('https://worldisaster.com/api/disasters', {timeout: 5000});
-        const updatedData = response.data;
-
-        // Filter based on pathname and dStatus
-        const filteredData = updatedData.filter((item:any) => {
-          if (curPath ==='archive') {
-            return item.dStatus !== 'ongoing';
-          } else if (curPath === 'live') {
-            return item.dStatus === 'ongoing';
-          } return false;
-        });
-    
-        setDisasterData(filteredData);
-        setIsLoading(false);
-        console.log("데이터 가져오기 성공");
+        if(curPath === "archive") {
+          const response = await axios.get('https://worldisaster.com/api/disasters/archive', {timeout: 5000});
+          const updatedData = response.data;
+          setDisasterData(updatedData);
+          setIsLoading(false);
+          console.log("아카이브 데이터 가져오기 성공");
+        } else if (curPath === "live") {
+          const response = await axios.get('https://worldisaster.com/api/disasters/live', {timeout: 5000});
+          const updatedData = response.data;
+          setDisasterData(updatedData);
+          setIsLoading(false);
+          console.log("라이브 데이터 가져오기 성공");
+        }
       } catch (error: any) {
         if (error.code === 'ECONNABORTED') {
           console.log("타임아웃");
@@ -220,7 +218,11 @@ export const EarthCanvas = () => {
           onUpdate: () => camera.lookAt(new THREE.Vector3(0, 0, 0)),
           onComplete: () => {
             try{
-              router.push(`detail1/${country}`);
+              if(currentPath.includes("archive")) {
+                router.push(`detail1/${country}`);
+                } else if (currentPath.includes("live")) {
+                router.push(`detail2/${country}`);
+              }
             } catch (error) {
               console.log("이동실패", error);
               setTimeout(() => {
