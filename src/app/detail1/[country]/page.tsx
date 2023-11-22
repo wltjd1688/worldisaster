@@ -1,6 +1,6 @@
 import CountryInfo from "@/app/components/CountryInfo";
 import LeftSidebar from "../../components/LeftSidebar";
-// import DisastersList from "@/app/components/DisastersFilter";
+import DisastersFilter from "@/app/components/DisastersFilter";
 const Nation = () => {
 
   return (
@@ -9,7 +9,7 @@ const Nation = () => {
         <LeftSidebar />
         <section className='main-container'>
           <CountryInfo />
-          {/* <DisastersList/> */}
+          <DisastersFilter/>
         </section>
       </main>
     </>
