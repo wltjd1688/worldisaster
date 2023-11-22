@@ -23,6 +23,7 @@ export async function Disaster(){
   const pathSegments = pathname.split("/");
 
   useEffect(() => {
+    const pathSegments = pathname.split("/");
     const getDisaster = async () => {
       try {
         const res = await axios(`https://worldisaster.com/api/disasters/${pathSegments[2]}`);
@@ -32,6 +33,10 @@ export async function Disaster(){
         console.log("재난 데이터 가져오기 실패", error);
       }
     };
+
+    if (pathSegments[2]) {
+      getDisaster();
+    } 
   }, [pathname]);
 
   return (
@@ -39,6 +44,7 @@ export async function Disaster(){
       <main className='flex flex-row'>
         <LeftSidebar />
         <section className='main-container'>
+          하트
         </section>
         <RightSidebar />
       </main>
