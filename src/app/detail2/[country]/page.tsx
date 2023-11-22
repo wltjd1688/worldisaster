@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import axios from 'axios';
 import LeftSidebar from "../../components/LeftSidebar";
 import RightSidebar from "../../components/RightSidebar";
@@ -18,26 +18,27 @@ interface disasterInfo {
 }
 
 export async function Disaster(){
-  const [disasterInfo, setDisasterInfo] = useState<disasterInfo | null>(null);
-  const pathname = usePathname();
-  const pathSegments = pathname.split("/");
+//   const [disasterInfo, setDisasterInfo] = useState<disasterInfo | null>(null);
+//   const pathname = usePathname();
 
-  useEffect(() => {
-    const pathSegments = pathname.split("/");
-    const getDisaster = async () => {
-      try {
-        const res = await axios(`https://worldisaster.com/api/disasters/${pathSegments[2]}`);
-        setDisasterInfo(res.data);
-        console.log("재난 데이터 가져오기 성공");
-      } catch(error) {
-        console.log("재난 데이터 가져오기 실패", error);
-      }
-    };
+//   useEffect(() => {
+//     const pathSegments = pathname.split("/");
+//     const disasterId = pathSegments[2];
 
-    if (pathSegments[2]) {
-      getDisaster();
-    } 
-  }, [pathname]);
+//     const getDisasterDetail = async () => {
+//       try {
+//         const res = await axios(`https://worldisaster.com/api/disasters/${disasterId}`);
+//         setDisasterInfo(res.data);
+//         console.log("재난 데이터 가져오기 성공");
+//       } catch(error) {
+//         console.log("재난 데이터 가져오기 실패", error);
+//       }
+//     };
+
+//     if (pathSegments) {
+//       getDisasterDetail();
+//     } 
+//   }, [pathname]);
 
   return (
     <>
