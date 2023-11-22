@@ -12,9 +12,9 @@ const Nation = () => {
         <main className="flex flex-row">
           <LeftSidebar />
           <section className="main-container flex-1">
-            <div className="flex w-full flex-col mx-auto p-2 max-w-7xl">
-              <Tabs aria-label="Options" className="w-full ">
-                <Tab key="nation" title="Nation">
+            <div className="flex w-full flex-col mx-auto p-2 max-w-7xl ">
+              <Tabs aria-label="Options" className="w-full">
+                <Tab key="nation" title="Nation" className="">
                   <Card className="bg-dark-2 p-3">
                     <CardBody>
                     <CountryInfo />
@@ -24,7 +24,9 @@ const Nation = () => {
                 <Tab key="disaster" title="Disaster">
                   <Card className="bg-dark-2">
                     <CardBody>
-                      <DisastersFilter />
+                      <div className="flex justify-center">
+                        <DisastersFilter />
+                      </div>
                     </CardBody>
                   </Card>
                 </Tab>

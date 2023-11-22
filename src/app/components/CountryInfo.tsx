@@ -44,11 +44,11 @@ const CountryInfo: React.FC = () => {
           {countryInfo && (
             <>
               <h3 className='text-heading4-medium text-light-1'>{countryInfo.cCountry}({countryInfo.cCode})</h3>
-              <div className='mt-7 flex w-[350px] flex-col gap-9'>
+              <div className='mt-7 flex w-[350px] flex-col gap-2 '>
                 <p className='text-light-3'>대륙: {countryInfo.cContinent}</p>
                 <p className='text-light-3'>GDP: {countryInfo.cGDP}</p>
                 <p className='text-light-3'>인구: {countryInfo.cPopulation}</p>
-                <p className='text-light-3'>지역: {countryInfo.cLocation},[{countryInfo.cGeoCoordinates}]</p>
+                <p className='text-light-3'>지역: {countryInfo.cLocation}</p>
               </div>
             </>
           )}

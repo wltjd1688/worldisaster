@@ -42,16 +42,23 @@ const DisastersFilter: React.FC = () => {
   return (
     <>
       <div className='w-full max-w-4xl my-5'>
-        <div className='flex flex-1 flex-col justify-start'>
+        <div className='flex flex-1 flex-col justify-'>
           <h3 className='text-heading4-medium text-light-1'>재난 리스트</h3>
-          <div className='mt-7 flex w-[350px] flex-col gap-9'>
+          <div className=' pt-4 items-center grid gap-5 grid-cols-12 justify-items-center'>
+            <p className=" text-light-3 col-span-1 text-cetner">상태</p>
+            <p className=" text-light-3 col-span-7 text-center">재난 종류</p>
+            <p className=" text-light-3 col-span-4 text-center ">날짜</p>
+          </div>
+          <div className='mt-7 flex w-full flex-col gap-9 overflow-y-auto max-h-[55vh]'>
           {disasterElem.map((data, index) => {
               const statusColor = data.dStatus === 'past' ? 'bg-yellow-500' : 'bg-red-500';
               return (
-                <div key={index} className='w-[50vw] items-center grid gap-2 grid-cols-12'>
-                  <div className={` h-2.5 w-2.5 ${statusColor} rounded-full col-span-1`}></div>
-                  <p className=" col-span-7 items-start">{data.dType}</p>
-                  <p className=" col-span-4 items-center">{data.dDate}</p>
+                <div key={index} className=' items-center grid gap-5 grid-cols-12'>
+                  <div className=" w-full flex justify-center">
+                    <div className={`h-2.5 w-2.5 ${statusColor} rounded-full col-span-1`}></div>
+                  </div>
+                  <p className=" text-light-3 col-span-7 items-start ">{data.dType}</p>
+                  <p className=" text-light-3 col-span-4 text-center ">{data.dDate}</p>
                 </div>
               );
             })}
