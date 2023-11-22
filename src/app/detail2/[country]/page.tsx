@@ -4,8 +4,11 @@ import LeftSidebar from "../../components/LeftSidebar";
 // import RightSidebar from "../../components/RightSidebar";
 import { useEffect, useState } from 'react';
 import { usePathname } from "next/navigation";
-import {Select, SelectItem} from "@nextui-org/react";
+import {Select, SelectItem, Card, CardBody} from "@nextui-org/react";
 import {NextUIProvider} from "@nextui-org/react";
+import disasterType from "@/app/components/disasterType";
+import countryList from '@/app/components/countryList';
+import yearList from "@/app/components/yearList";
 
 interface disasterInfo {
   dTitle: string;
@@ -46,23 +49,48 @@ export function Disaster(){
       <NextUIProvider>
         <main className='flex flex-row'>
           <LeftSidebar />
-          <Select 
-              label="Select an animal" 
-              className="max-w-xs" 
-            >
-
-            <div className="flex w-full flex-wrap items-end md:flex-nowrap mb-6 md:mb-0 gap-4">
-              <Select
-                labelPlacement="outside-left"
-                label="Favorite Animal"
-                className="max-w-xs"
+          <section className="main-container flex-1">
+            <div className="flex w-full gap-5 p-2 max-w-7xl">
+            <Card className=" p-3 w-[100%]">
+              <div className=" inline-block">
+                <Select 
+                  label="Select an Year" 
+                  className="max-w-xs" 
+                  labelPlacement="outside-left"
                 >
-                  <SelectItem key={1} value="asdf">
-                    asdf
-                  </SelectItem>
-              </Select>
-            </div>
-          </Select>
+                  {yearList.map((elem,index) => (
+                    <SelectItem key={index} value={elem.value} className=' text-slate-400'>
+                      {elem.label}
+                    </SelectItem>
+                  ))}
+                </Select>
+                <Select 
+                  label="Select an Disaster Type" 
+                  className="max-w-xs" 
+                  labelPlacement="outside-left"
+                >
+                  {disasterType.map((elem,index) => (
+                    <SelectItem key={index} value={elem.value} className=' text-slate-400'>
+                      {elem.label}
+                    </SelectItem>
+                  ))}
+                </Select>
+                <Select
+                  label="Select an Country"
+                  className="max-w-xs" 
+                  labelPlacement="outside-left"
+                >
+                  {countryList.map((elem,index) => (
+                    <SelectItem key={elem.value} value={elem.value} className=' text-slate-400'>
+                      {elem.label}
+                    </SelectItem>
+                  ))}
+                </Select>
+              </div>
+            </Card>
+            </div>  
+          </section>
+          
         </main>
       </NextUIProvider>
     </>

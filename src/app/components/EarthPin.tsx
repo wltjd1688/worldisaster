@@ -259,13 +259,11 @@ export const EarthCanvas = () => {
       {hovered && (
         <Html>
           <div style={{
-            backgroundColor: 'white', 
-            width: 'fit-content',
+            width: '400px',
             padding: '5px', 
             borderRadius: '8px', 
             fontSize: '1.2rem',
-            boxShadow: '0 0 10px rgba(0,0,0,0.5)',
-            color:'black'
+            color: 'white',
           }}>
             country: {props.country}
           </div>

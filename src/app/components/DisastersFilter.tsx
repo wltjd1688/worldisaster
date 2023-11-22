@@ -28,6 +28,11 @@ const DisastersFilter: React.FC = () => {
       try {
         const res = await axios(`https://worldisaster.com/api/disasters/${pathSegments[2]}`);
         const sortedData = res.data.sort((a: Info, b: Info) => {
+          if (a.dStatus === "ongoing" && b.dStatus !== "ongoing") {
+            return -1;
+          } else if (b.dStatus === "ongoing" && a.dStatus !== "ongoing") {
+            return 1;
+          }
           return b.dDate.localeCompare(a.dDate);
         });
         setDisasterElem(sortedData);
@@ -36,12 +41,12 @@ const DisastersFilter: React.FC = () => {
         console.log("국가 재난 데이터 가져오기 실패", error);
       }
     };
-
+  
     if (pathSegments[2]) {
       getDisasterElem();
     }
   }, [pathname]);
-
+  
   return (
     <>
       <div className='w-full max-w-4xl my-5'>

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Country = [
+export const CountryList = [
   {label: 'Afghanistan', value: 'Afghanistan'},
   {label: 'Albania', value: 'Albania'},
   {label: 'Algeria', value: 'Algeria'},
@@ -184,3 +184,4 @@ export const Country = [
   {label: 'occupied Palestinian territory', value: 'occupied Palestinian territory'},
   {label: 'the Republic of North Macedonia', value: 'the Republic of North Macedonia'}
 ];
+export default CountryList;
