@@ -1,57 +1,44 @@
 "use client"
-import axios from 'axios';
+import CountryInfo from "@/app/components/CountryInfo";
 import LeftSidebar from "../../components/LeftSidebar";
-import RightSidebar from "../../components/RightSidebar";
-import { useEffect, useState } from 'react';
-import { usePathname } from "next/navigation";
-import path from 'path';
-
-interface disasterInfo {
-  dTitle: string;
-  dCountryCode: string;
-  dCountry: string;
-  dType: string;
-  dDate: string;
-  dDescription: string;
-  dLatitude: number;
-  dLongitude: number;
-}
-
-export async function Disaster(){
-//   const [disasterInfo, setDisasterInfo] = useState<disasterInfo | null>(null);
-//   const pathname = usePathname();
-
-//   useEffect(() => {
-//     const pathSegments = pathname.split("/");
-//     const disasterId = pathSegments[2];
-
-//     const getDisasterDetail = async () => {
-//       try {
-//         const res = await axios(`https://worldisaster.com/api/disasters/${disasterId}`);
-//         setDisasterInfo(res.data);
-//         console.log("재난 데이터 가져오기 성공");
-//       } catch(error) {
-//         console.log("재난 데이터 가져오기 실패", error);
-//       }
-//     };
-
-//     if (pathSegments) {
-//       getDisasterDetail();
-//     } 
-//   }, [pathname]);
-
+import React from "react";
+import {Tabs, Tab, Card, CardBody} from "@nextui-org/react";
+import {NextUIProvider} from "@nextui-org/react";
+import DisastersFilter from "@/app/components/DisastersFilter";
+const Nation = () => {
   return (
-    <>
-      <main className='flex flex-row'>
-        <LeftSidebar />
-        <section className='main-container'>
-          하트
-        </section>
-        <RightSidebar />
-      </main>
+      <>
+      <NextUIProvider>
+        <main className="flex flex-row">
+          <LeftSidebar />
+          <section className="main-container flex-1">
+            <div className="flex w-full flex-col mx-auto p-2 max-w-7xl">
+              <Tabs aria-label="Options" className="w-full ">
+                <Tab key="nation" title="Nation">
+                  <Card className="bg-dark-2 p-3">
+                    <CardBody>
+                    <CountryInfo />
+                    </CardBody>
+                  </Card>
+                </Tab>
+                <Tab key="disaster" title="Disaster">
+                  <Card className="bg-dark-2">
+                    <CardBody>
+                      <DisastersFilter />
+                    </CardBody>
+                  </Card>
+                </Tab>
+              </Tabs>
+            </div>
+          </section>
+        </main>
+      </NextUIProvider>
     </>
   );
 };
+export default Nation;
 
 
-export default Disaster;
+
+
+
