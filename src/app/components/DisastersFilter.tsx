@@ -69,7 +69,7 @@ const DisastersFilter: React.FC = () => {
                     <p className=" text-light-3 col-span-4 text-center ">{data.dDate}</p>
                   </div>
                   }>
-                    <div className='grid gap-5 grid-cols-12 grid-rows-12'>
+                    <div className='h-[20vh] overflow-auto grid gap-5 grid-cols-12 grid-rows-12'>
                       <div className=" w-full items-start flex justify-center
                       ">
                         <div className='col-span-1'>설명: </div>

@@ -1,44 +1,73 @@
 "use client"
-import CountryInfo from "@/app/components/CountryInfo";
+import axios from 'axios';
 import LeftSidebar from "../../components/LeftSidebar";
-import React from "react";
-import {Tabs, Tab, Card, CardBody} from "@nextui-org/react";
+// import RightSidebar from "../../components/RightSidebar";
+import { useEffect, useState } from 'react';
+import { usePathname } from "next/navigation";
+import {Select, SelectItem} from "@nextui-org/react";
 import {NextUIProvider} from "@nextui-org/react";
-import DisastersFilter from "@/app/components/DisastersFilter";
-const Nation = () => {
+
+interface disasterInfo {
+  dTitle: string;
+  dCountryCode: string;
+  dCountry: string;
+  dType: string;
+  dDate: string;
+  dDescription: string;
+  dLatitude: number;
+  dLongitude: number;
+}
+
+export function Disaster(){
+  const [disasterInfo, setDisasterInfo] = useState<disasterInfo | null>(null);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const pathSegments = pathname.split("/");
+    const disasterId = pathSegments[2];
+
+    const getDisasterDetail = async () => {
+      try {
+        const res = await axios(`https://worldisaster.com/api/disasters/${disasterId}`);
+        setDisasterInfo(res.data);
+        console.log("재난 데이터 가져오기 성공");
+      } catch(error) {
+        console.log("재난 데이터 가져오기 실패", error);
+      }
+    };
+
+    if (pathSegments) {
+      getDisasterDetail();
+    } 
+  }, [pathname]);
+
   return (
-      <>
+    <>
       <NextUIProvider>
-        <main className="flex flex-row">
+        <main className='flex flex-row'>
           <LeftSidebar />
-          <section className="main-container flex-1">
-            <div className="flex w-full flex-col mx-auto p-2 max-w-7xl">
-              <Tabs aria-label="Options" className="w-full ">
-                <Tab key="nation" title="Nation">
-                  <Card className="bg-dark-2 p-3">
-                    <CardBody>
-                    <CountryInfo />
-                    </CardBody>
-                  </Card>
-                </Tab>
-                <Tab key="disaster" title="Disaster">
-                  <Card className="bg-dark-2">
-                    <CardBody>
-                      <DisastersFilter />
-                    </CardBody>
-                  </Card>
-                </Tab>
-              </Tabs>
+          <Select 
+              label="Select an animal" 
+              className="max-w-xs" 
+            >
+
+            <div className="flex w-full flex-wrap items-end md:flex-nowrap mb-6 md:mb-0 gap-4">
+              <Select
+                labelPlacement="outside-left"
+                label="Favorite Animal"
+                className="max-w-xs"
+                >
+                  <SelectItem key={1} value="asdf">
+                    asdf
+                  </SelectItem>
+              </Select>
             </div>
-          </section>
+          </Select>
         </main>
       </NextUIProvider>
     </>
   );
 };
-export default Nation;
 
 
-
-
-
+export default Disaster;
